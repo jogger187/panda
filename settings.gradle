@@ -1,0 +1,3 @@
+rootProject.name = "JH_UI"
+include ':app'
+include ':PandaUI'

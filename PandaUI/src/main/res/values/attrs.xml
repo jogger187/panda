@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <declare-styleable name="pandaEditText">
+    <attr name="customAlert" format="boolean" />
+    <attr name="customBackgroundEnable" format="boolean" />
+    <attr name="customBackgroundNormal" format="reference|color" />
+    <attr name="customBackgroundAlert" format="reference|color" />
+    <attr name="customAlertTip" format="string" />
+    <attr name="customType" format="enum">
+      <enum name="normal" value="0" />
+      <enum name="ascii" value="1" />
+      <enum name="number" value="2"/>
+    </attr>
+  </declare-styleable>
+</resources>
