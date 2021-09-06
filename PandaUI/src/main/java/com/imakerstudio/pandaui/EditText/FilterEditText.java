@@ -53,6 +53,8 @@ public class FilterEditText extends AppCompatEditText implements EditTextInterfa
           mAlertTip = attrArray.getString(R.styleable.pandaEditText_customAlertTip);
         }
 
+        backgroundEnable = attrArray.getBoolean(R.styleable.pandaEditText_customBackgroundEnable, false);
+
         if(attrArray.getDrawable(R.styleable.pandaEditText_customBackgroundNormal) == null){
           backgroundNormal = ContextCompat.getDrawable(getContext(),R.drawable.edit_background);
         }else {
@@ -78,11 +80,16 @@ public class FilterEditText extends AppCompatEditText implements EditTextInterfa
 
   public void setAlert(boolean tf){
     mAlert = tf;
-    if (tf) {
-      setBackgroundDrawable(backgroundAlert);
-    } else {
-      setBackgroundDrawable(backgroundNormal);
+    if (backgroundEnable){
+      if (tf) {
+        setBackgroundDrawable(backgroundAlert);
+      } else {
+        setBackgroundDrawable(backgroundNormal);
+      }
+    }else {
+      setBackground(null);
     }
+
   }
 
   @Override

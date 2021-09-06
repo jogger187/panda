@@ -16,6 +16,7 @@
             android:layout_width="190dp"
             android:layout_height="40dp"
             app:customAlert = "false"
+            app:customBackgroundEnable = "true"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
