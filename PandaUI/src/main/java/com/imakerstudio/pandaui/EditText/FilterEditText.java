@@ -128,13 +128,13 @@ public class FilterEditText extends AppCompatEditText implements EditTextInterfa
 
       @Override
       public void onTextChanged(CharSequence s, int start, int before, int count) {
-        //如果当前text为空则直接return，不进入监听Decimal处理
+
         if (null == s || "".contentEquals(s)) {
           setAlert(true);
           return;
         }
         int valueNow = Integer.parseInt(s.toString());
-        removeTextChangedListener(this); //移除监听 //防止重复监听不断
+        removeTextChangedListener(this);
         if(valueNow > max){
           setAlert(true);
         }else if(valueNow<min){
@@ -142,7 +142,7 @@ public class FilterEditText extends AppCompatEditText implements EditTextInterfa
         }else {
           setAlert(false);
         }
-        addTextChangedListener(this); //恢复监听
+        addTextChangedListener(this);
       }
 
       @Override
@@ -166,14 +166,14 @@ public class FilterEditText extends AppCompatEditText implements EditTextInterfa
 
       @Override
       public void onTextChanged(CharSequence s, int start, int before, int count) {
-        //如果当前text为空则直接return，不进入监听Decimal处理
+
         if (null == s || "".contentEquals(s)) {
           setAlert(true);
           return;
         }
 
         float valueNow = Float.parseFloat(s.toString());
-        removeTextChangedListener(this); //移除监听 //防止重复监听不断
+        removeTextChangedListener(this);
 
         if(valueNow > max){
           setAlert(true);
@@ -190,7 +190,7 @@ public class FilterEditText extends AppCompatEditText implements EditTextInterfa
           setSelection(inputString.lastIndexOf(".") + 1 + decimalScale);
         }
 
-        addTextChangedListener(this); //恢复监听
+        addTextChangedListener(this);
       }
 
       @Override
