@@ -9,11 +9,10 @@ import android.text.InputType;
 import android.text.TextWatcher;
 import android.text.method.*;
 import android.util.*;
-import androidx.appcompat.widget.*;
-import androidx.core.content.ContextCompat;
+import android.widget.EditText;
 import com.imakerstudio.pandaui.R;
 
-public class FilterEditText extends AppCompatEditText implements EditTextInterface{
+public class FilterEditText extends EditText implements EditTextInterface{
   private String mLimitChar = "";
   private int mLimitLength = 0;
   private boolean mAlert = false;
@@ -56,13 +55,13 @@ public class FilterEditText extends AppCompatEditText implements EditTextInterfa
         backgroundEnable = attrArray.getBoolean(R.styleable.pandaEditText_customBackgroundEnable, false);
 
         if(attrArray.getDrawable(R.styleable.pandaEditText_customBackgroundNormal) == null){
-          backgroundNormal = ContextCompat.getDrawable(getContext(),R.drawable.edit_background);
+          backgroundNormal = getContext().getDrawable(R.drawable.edit_background);
         }else {
           backgroundNormal = attrArray.getDrawable(R.styleable.pandaEditText_customBackgroundNormal);
         }
 
         if(attrArray.getDrawable(R.styleable.pandaEditText_customBackgroundAlert) == null){
-          backgroundAlert = ContextCompat.getDrawable(getContext(),R.drawable.edit_background_alert);
+          backgroundAlert = getContext().getDrawable(R.drawable.edit_background_alert);
         }else {
           backgroundAlert = attrArray.getDrawable(R.styleable.pandaEditText_customBackgroundAlert);
         }
